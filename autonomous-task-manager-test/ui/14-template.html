@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Task Manager Demo</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:640px;margin:24px auto;padding:0 12px;color:#222}
+h1{font-size:22px}.bar{display:flex;gap:6px;margin:10px 0;flex-wrap:wrap}
+input,select,button{padding:6px;font-size:14px}#title{flex:1;min-width:140px}
+li{list-style:none;display:flex;align-items:center;gap:8px;padding:8px;border-bottom:1px solid #ddd}
+li.done .t{text-decoration:line-through;color:#888}.t{flex:1}
+.p{font-size:12px;padding:2px 8px;border-radius:10px;color:#fff}.high{background:#c0392b}.medium{background:#d68910}.low{background:#2e86c1}
+#err{color:#c0392b;min-height:18px}#count{color:#555;font-size:13px}ul{padding:0}
+</style></head><body>
+<h1>Task Manager (local mock data)</h1>
+<div class="bar"><input id="title" placeholder="New task title">
+<select id="prio"><option>high</option><option selected>medium</option><option>low</option></select>
+<input id="due" type="date"><button id="add">Add</button></div>
+<div id="err"></div>
+<div class="bar">Filter: <select id="fs"><option value="">all</option><option>open</option><option>done</option></select>
+<select id="fp"><option value="">any priority</option><option>high</option><option>medium</option><option>low</option></select>
+<span id="count"></span></div>
+<ul id="list"></ul>
+<script>
+const PR={high:0,medium:1,low:2};
+let tasks=/*SEED*/[]/*END*/;
+tasks.forEach((t,i)=>{t.id=i+1;t.done=!!t.done;t.priority=t.priority||"medium"});
+const $=id=>document.getElementById(id);
+function render(){
+ const fs=$("fs").value,fp=$("fp").value;
+ let r=tasks.filter(t=>(!fs||(fs==="done")===t.done)&&(!fp||t.priority===fp));
+ r.sort((a,b)=>PR[a.priority]-PR[b.priority]||(a.due||"9999").localeCompare(b.due||"9999")||a.id-b.id);
+ $("list").innerHTML="";
+ r.forEach(t=>{const li=document.createElement("li");li.className=t.done?"done":"";li.dataset.id=t.id;
+  li.innerHTML='<input type="checkbox" class="chk"'+(t.done?" checked":"")+'><span class="t"></span><span class="p '+t.priority+'">'+t.priority+'</span><small>'+(t.due||"")+'</small><button class="del">Delete</button>';
+  li.querySelector(".t").textContent=t.title;
+  li.querySelector(".chk").onchange=()=>{t.done=!t.done;render()};
+  li.querySelector(".del").onclick=()=>{tasks=tasks.filter(x=>x!==t);render()};
+  $("list").appendChild(li)});
+ $("count").textContent=r.length+" shown / "+tasks.length+" total / "+tasks.filter(t=>t.done).length+" done";
+}
+$("add").onclick=()=>{const title=$("title").value.trim();
+ if(!title){$("err").textContent="Title is required";return}
+ $("err").textContent="";
+ tasks.push({id:Math.max(0,...tasks.map(t=>t.id))+1,title,priority:$("prio").value,due:$("due").value||null,done:false});
+ $("title").value="";render()};
+$("fs").onchange=$("fp").onchange=render;render();
+</script></body></html>
