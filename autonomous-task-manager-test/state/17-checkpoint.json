@@ -1,0 +1,39 @@
+{
+  "completed": [
+    "requirements_check",
+    "parallel_jobs",
+    "build_ui",
+    "static_ui_check",
+    "interactive_ui_check",
+    "final_summary"
+  ],
+  "results": {
+    "requirements_check": {
+      "ok": true
+    },
+    "parallel_jobs": {
+      "unit_tests_exit": 0,
+      "import_bad_file_exit": 1,
+      "overlap_s": 1.08,
+      "wall_s": 1.12,
+      "ok": true,
+      "isolated_failure": true
+    },
+    "build_ui": {
+      "ok": true,
+      "tasks_embedded": 5
+    },
+    "static_ui_check": {
+      "ok": true
+    },
+    "interactive_ui_check": {
+      "ok": true,
+      "exit": 0,
+      "checks": 7
+    },
+    "final_summary": {
+      "ok": true
+    }
+  },
+  "runs": 2
+}
