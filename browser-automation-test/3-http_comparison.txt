@@ -1,0 +1,7 @@
+Plain HTTP download (curl, no JavaScript run) vs the browser, same URLs, 2026-11-24
+quotes.toscrape.com/js/: HTTP html has 0 quote blocks; the browser showed 10 quotes.
+Add/Remove Elements: HTTP html has the "Add Element" button and the script that would create delete buttons, but no delete buttons. In the browser, 3 clicks created 3.
+Dynamic Loading example 2: the HTTP html has no "finish" element in the page body. The text "Hello World!" appears only inside the page's script, which creates and shows that element after Start is clicked and a delay. Plain HTTP does not click or wait, so it cannot show the result. The browser showed the text about 5 s after Start.
+jQuery UI menu: HTTP html lists 13 list items in the source; the browser showed 2 visible before hover and 4 after. Visibility depends on page styling and script, which plain HTTP does not apply.
+Challenging DOM: the answer number is drawn on a canvas by JavaScript and is visible in the screenshot (96326, read by eye). I did not check whether the plain HTML contains the number.
+Download 19.json: HTTP GET returned 200, header says attachment, type application/octet-stream, 5 bytes, content "sdfsd". It is plain text, not valid JSON despite the .json name. The browser's in-page request returned the same.

@@ -1,0 +1,16 @@
+Browser test observations, 2026-11-24 (times UTC, from the run)
+10:53:40  Opened the-internet.herokuapp.com. Page finished loading: title "The Internet", 81 links.
+10:53:43  Clicked "Add Element" 3 times on the Add/Remove Elements page. Counted 3 new Delete buttons.
+10:53:43  Opened the Dropdown page and selected "Option 2". The dropdown value read back as 2. Screenshot taken.
+10:54:00  Opened the jQuery UI menu page. 2 menu items visible before hover.
+10:54:02  Hovered over "Enabled". 4 items visible afterward.
+10:54:04  Clicked a link on the home page. Landed on /challenging_dom. Read the table header (Lorem, Ipsum, Dolor, Sit, Amet, Diceret, Action) and the first row (Iuvaret0, Apeirian0, Adipisci0, Definiebas0, Consequuntur0, Phaedrum0, edit/delete). Screenshot taken.
+10:54:09  Opened Dynamic Loading example 2 and clicked Start. The result element did not exist yet.
+10:54:14  About 5 seconds later the text "Hello World!" appeared. Screenshot taken.
+10:54:15  Loaded the /slow page: it finished in 369 ms (it was not slow today).
+10:54:21  Set a test cookie on the site, moved to another page of the same site: the cookie was still there.
+10:54:29  Clicked the download link for 19.json. The page did not change. No downloaded file could be retrieved from the browser. A separate in-page request for the same file returned status 200, 5 bytes of plain text ("sdfsd").
+10:54:46  Opened quotes.toscrape.com/js/: 10 quotes were present on the rendered page.
+10:54:49  Clicked "Next": the address changed to /js/page/2/. Reading the first quote text returned nothing (likely read too early); not re-checked.
+10:54:58  After closing the browser session and opening a new one, the test cookie was gone.
+Notes: menu labels were not read reliably, only the count of visible items. HTTP comparison is in http_comparison.txt.
