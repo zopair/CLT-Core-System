@@ -17,7 +17,12 @@ Stable definition used: Stable = the version the publisher's own flags point to 
 
 ## What each source says
 - PyPI: summary "A simple framework for building complex web applications."; requires Python >=3.9; license BSD-3-Clause; yanked=False. The long description is a project overview, with no release notes.
-- GitHub release body: This is the Flask 3.1.3 security fix release, which fixes a security issue but does not otherwise change behavior and should not result in breaking changes compared to the latest feature release.  PyPI: https://pypi.org/project/Flask/3.1.3/ Changes: https://flask.palletsprojects.com/page/changes/#version-3-1-3  - The session is marked as accessed for operations that only access the keys but not the values, such as `in` and `len`. [GHSA-68rp-wp8r-4726](https://github.com/pallets/flask/security/advisories/GHSA-68rp-wp8r-4726)
+- GitHub release body: This is the Flask 3.1.3 security fix release, which fixes a security issue but does not otherwise change behavior and should not result in breaking changes compared to the latest feature release.
+ 
+ PyPI: https://pypi.org/project/Flask/3.1.3/
+ Changes: https://flask.palletsprojects.com/page/changes/#version-3-1-3
+ 
+ - The session is marked as accessed for operations that only access the keys but not the values, such as `in` and `len`. [GHSA-68rp-wp8r-4726](https://github.com/pallets/flask/security/advisories/GHSA-68rp-wp8r-4726)
 - Changelog section 3.1.3: - The session is marked as accessed for operations that only access the keys but not the values, such as ``in`` and ``len``. :ghsa:`68rp-wp8r-4726`
 
 ## Comparison
