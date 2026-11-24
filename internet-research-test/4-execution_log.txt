@@ -1,0 +1,10 @@
+2026-11-24T10:42:27Z GET https://pypi.org/pypi/flask/json -> 200, 88766 bytes, saved raw/pypi.json
+2026-11-24T10:42:28Z GET https://api.github.com/repos/pallets/flask/releases/latest -> 200, 5873 bytes, saved raw/github_release.json
+2026-11-24T10:42:28Z GET https://raw.githubusercontent.com/pallets/flask/main/CHANGES.rst -> 200, 73668 bytes, saved raw/CHANGES.rst
+2026-11-24T10:42:28Z GET https://pypi.org/project/flask/ -> 200, 3038 bytes, saved raw/pypi_page.html
+2026-11-24T10:42:28Z GET https://github.com/pallets/flask -> 200, 251529 bytes, saved raw/gh_repo.html
+2026-11-24T10:42:29Z GET https://github.com/pallets/flask/releases/tag/3.1.3 -> 200, 160610 bytes, saved raw/gh_release_page.html
+2026-11-24T10:42:29Z GET https://flask.palletsprojects.com/ -> 200, 39704 bytes, saved raw/docs.html
+2026-11-24T10:42:29Z GET https://example.invalid/nonexistent -> FAILED URLError: <urlopen error [Errno -2] Name or service not known>
+2026-11-24T10:42:29Z GET https://api.github.com/repos/pallets/flask -> 200, 6175 bytes, saved raw/repo_api.json
+2026-11-24T10:42:29Z GET https://nonexistent-host-zz.invalid/api -> FAILED URLError: <urlopen error [Errno -2] Name or service not known>
