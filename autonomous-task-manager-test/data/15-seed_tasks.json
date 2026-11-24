@@ -1,0 +1,7 @@
+[
+ {"title":"Write requirements","priority":"high","due":"2026-11-25","done":true},
+ {"title":"Design storage format","priority":"medium","due":"2026-11-26"},
+ {"title":"Build the UI","priority":"high","due":"2026-11-27"},
+ {"title":"Review test report","priority":"low"},
+ {"title":"Buy coffee (mock)","priority":"low","due":"2026-11-24"}
+]
