@@ -1,0 +1,7 @@
+PASS initial render shows 5 seed tasks (count=5)
+PASS sorted: first shown is a high-priority task
+PASS empty title rejected with message
+PASS add task -> 6 shown (6 shown / 6 total / 1 done)
+PASS toggle done updates done count (6 shown / 6 total / 2 done)
+PASS filter open -> 4 shown
+PASS delete removes one -> 3 shown, 5 total (3 shown / 5 total / 2 done)

@@ -1,0 +1,31 @@
+13:09:10 RUN #1 start, checkpoint says completed=[]
+13:09:10 START requirements_check
+13:09:10 DONE  requirements_check -> {"ok": true}
+13:09:10 START parallel_jobs
+13:09:11   job unit_tests exit=0 tail=Ran 12 tests in 0.005s |  | OK
+13:09:11   job import_bad_file exit=1 tail=loads/autonomous_test/taskmgr/core.py", line 21, in _validate |     raise ValidationError("title is required") | taskmgr.core.ValidationError: title is required
+13:09:11   overlap=1.08s wall=1.12s (sum of job times=2.20s)
+13:09:11 DONE  parallel_jobs -> {"unit_tests_exit": 0, "import_bad_file_exit": 1, "overlap_s": 1.08, "wall_s": 1.12, "ok": true, "isolated_failure": true}
+13:09:11 INTENTIONAL STOP after parallel_jobs (exit code 3)
+run1 exit=3
+13:09:11 RUN #2 start, checkpoint says completed=['requirements_check', 'parallel_jobs']
+13:09:11 SKIP requirements_check (already in checkpoint)
+13:09:11 SKIP parallel_jobs (already in checkpoint)
+13:09:11 START build_ui
+13:09:11 DONE  build_ui -> {"ok": true, "tasks_embedded": 5}
+13:09:11 START static_ui_check
+13:09:11 DONE  static_ui_check -> {"ok": true}
+13:09:11 START interactive_ui_check
+13:09:13   PASS initial render shows 5 seed tasks (count=5)
+13:09:13   PASS sorted: first shown is a high-priority task
+13:09:13   PASS empty title rejected with message
+13:09:13   PASS add task -> 6 shown (6 shown / 6 total / 1 done)
+13:09:13   PASS toggle done updates done count (6 shown / 6 total / 2 done)
+13:09:13   PASS filter open -> 4 shown
+13:09:13   PASS delete removes one -> 3 shown, 5 total (3 shown / 5 total / 2 done)
+13:09:13   ALL PASSED
+13:09:13 DONE  interactive_ui_check -> {"ok": true, "exit": 0, "checks": 7}
+13:09:13 START final_summary
+13:09:13 DONE  final_summary -> {"ok": true}
+13:09:13 PIPELINE COMPLETE
+run2 exit=0

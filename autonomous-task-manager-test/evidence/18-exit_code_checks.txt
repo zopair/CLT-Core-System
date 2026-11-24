@@ -1,0 +1,2 @@
+orchestrator with a stage returning ok=false: exit=1, stage marked complete=False
+ui_test exit with broken UI=1

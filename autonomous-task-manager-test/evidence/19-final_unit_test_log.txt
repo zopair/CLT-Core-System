@@ -1,0 +1,17 @@
+test_add_defaults (tests.test_core.T) ... ok
+test_bad_priority (tests.test_core.T) ... ok
+test_delete_and_missing (tests.test_core.T) ... ok
+test_done_reopen (tests.test_core.T) ... ok
+test_empty_title (tests.test_core.T) ... ok
+test_ids_not_reused_after_delete_of_middle (tests.test_core.T) ... ok
+test_import_malformed_leaves_data (tests.test_core.T) ... ok
+test_import_valid (tests.test_core.T) ... ok
+test_persistence_roundtrip (tests.test_core.T) ... ok
+test_seed_loads (tests.test_core.T) ... ok
+test_sort_and_filter (tests.test_core.T) ... ok
+test_status_filter (tests.test_core.T) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
